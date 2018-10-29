@@ -33,25 +33,25 @@
     </div>
     <div class="row">
         <div class="col-2">
-                <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn">Filter</button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                            <a href="#Ale">Ale<s></s></a>
-                            <a href="#IPA">IPA</a>
-                            <a href="#Lager">Lager</a>
-                            <a href="#Porter">Porter</a>
-                            <a href="#Stout">Stout</a>
-                        </div>
-                    </div>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Filter</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                    <a href="#Ale">Ale<s></s></a>
+                    <a href="#IPA">IPA</a>
+                    <a href="#Lager">Lager</a>
+                    <a href="#Porter">Porter</a>
+                    <a href="#Stout">Stout</a>
+                </div>
+            </div>
         </div>
         <div class="col-4">
             <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Guinness Draught" data-type="Stout">Guinness
                 Draught</button>
             <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Coconut Porter" data-type="Porter">Coconut
                 Porter</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="" 7 Hop IPA" data-type="IPA">7
-                Hop IPA</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="7 Hop IPA" data-type="IPA">7 Hop
+                IPA</button>
             <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Two Hearted Ale" data-type="IPA">Two
                 Hearted Ale</button>
             <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Lake Erie Monster" data-type="IPA">Lake
@@ -80,13 +80,34 @@
         </div>
 
         <div class="col-4">
-            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Guinness Draught" data-type="Stout">Guinness
-                Draught</button>
+
+
+            <div class="jumbotron">
+                <h4 class="display-10">Shoping Cart</h4>
+                <p>Start adding beer to cart here.</p>
+                <hr class="my-4">
+                
+
+            </div>
+
+            <div>
+                <button id="clear-cart">Clear Cart</button>
+            </div>
+
+
+
+            <!-- <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Guinness Draught" data-type="Stout"><span
+                    class="glyphicon glyphicon-star" aria-hidden="true"></span> Guinness Draught</button>
             <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Coconut Porter" data-type="Porter">Coconut
-                Porter</button>
+                Porter</button> -->
+            <!-- <button type="button" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+            </button> -->
         </div>
 
-        <div class="col-2"></div>
+        <div class="col-2">
+
+        </div>
 
     </div>
 
@@ -94,9 +115,7 @@
     <br>
 
 
-    <div>
-        <button id="clear-cart">Clear Cart</button>
-    </div>
+
 
 
     <!-- <div class="dropdown">
