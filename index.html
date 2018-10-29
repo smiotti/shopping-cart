@@ -19,13 +19,20 @@
 <body>
 
 
+
+    <audio id="myAudio">
+        <source src="/assets/audio/Ship_Horn.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
     <div class="container">
         <!-- https://getbootstrap.com/docs/4.1/layout/grid/ -->
         <!-- Content here -->
 
         <div class="row">
             <div class="col-12">
-                <h1>Beer Store Shopping Cart</h1>
+                <h1>The Beer Stand</h1>
             </div>
         </div>
 
@@ -37,32 +44,40 @@
                 <button onclick="myFunction()" class="dropbtn">Filter</button>
                 <div id="myDropdown" class="dropdown-content">
                     <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                    <a href="#Ale">Ale<s></s></a>
-                    <a href="#IPA">IPA</a>
-                    <a href="#Lager">Lager</a>
-                    <a href="#Porter">Porter</a>
-                    <a href="#Stout">Stout</a>
+                    <a id="filterAll" href="#">All<s></s></a>
+                    <a id="filterAle" href="#">Ale</a>
+                    <a id="filterIpa" href="#">IPA</a>
+                    <a id="filterLager" href="#">Lager</a>
+                    <a id="filterPorter" href="#">Porter</a>
+                    <a id="filterStout" href="#">Stout</a>
                 </div>
             </div>
         </div>
         <div class="col-4">
-            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Guinness Draught" data-type="Stout">Guinness
+            <button type="button" class="btn btn-primary btn-lg btn-block typeStout" data-name="Guinness Draught"
+                data-type="Stout">Guinness
                 Draught</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Coconut Porter" data-type="Porter">Coconut
+            <button onclick="playAudio()" type="button" class="btn btn-primary btn-lg btn-block typePorter" data-name="Coconut Porter"
+                data-type="Porter">Coconut
                 Porter</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="7 Hop IPA" data-type="IPA">7 Hop
+            <button type="button" class="btn btn-primary btn-lg btn-block typeIpa" data-name="7 Hop IPA" data-type="IPA">7
+                Hop
                 IPA</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Two Hearted Ale" data-type="IPA">Two
+            <button type="button" class="btn btn-primary btn-lg btn-block typeIpa" data-name="Two Hearted Ale"
+                data-type="IPA">Two
                 Hearted Ale</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Lake Erie Monster" data-type="IPA">Lake
+            <button type="button" class="btn btn-primary btn-lg btn-block typeIpa" data-name="Lake Erie Monster"
+                data-type="IPA">Lake
                 Erie Monster</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Christmas Ale" data-type="Ale">Great
+            <button type="button" class="btn btn-primary btn-lg btn-block typeAle" data-name="Christmas Ale" data-type="Ale">Great
                 Lakes Christmas Ale</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Double Dead Guy Ale" data-type="Ale">Double
+            <button type="button" class="btn btn-primary btn-lg btn-block typeAle" data-name="Double Dead Guy Ale"
+                data-type="Ale">Double
                 Dead Guy</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Kentucky Bournon Barrell"
+            <button type="button" class="btn btn-primary btn-lg btn-block typeAle" data-name="Kentucky Bournon Barrell"
                 data-type="Ale">Kentucky Bourbon Barrell</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block" data-name="Dortmunder Gold" data-type="Lager">Dortmunder
+            <button type="button" class="btn btn-primary btn-lg btn-block typeLager" data-name="Dortmunder Gold"
+                data-type="Lager">Dortmunder
                 Gold</button>
 
             <!-- <ul>
@@ -85,8 +100,16 @@
             <div class="jumbotron">
                 <h4 class="display-10">Shoping Cart</h4>
                 <hr class="my-8">
-                <p> Start adding beer to cart here.</p>
-                    
+                <div class="content">
+                    <p> Start adding beer to cart here.</p>
+                    <!-- Adding code on the fly in here -->
+                    <ul id="show-cart">
+                        <li>???????</li>
+                    </ul>
+
+
+
+                </div>
 
             </div>
 
@@ -111,40 +134,25 @@
 
     </div>
 
-    <br>
-    <br>
 
 
 
-
-
-    <!-- <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Filter</button>
-        <div id="myDropdown" class="dropdown-content">
-            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-            <a href="#Ale">Ale<s></s></a>
-            <a href="#IPA">IPA</a>
-            <a href="#Lager">Lager</a>
-            <a href="#Porter">Porter</a>
-            <a href="#Stout">Stout</a>
-        </div>
-    </div> -->
-
-
-    <div>
+    <!-- <div>
         <ul id="show-cart">
             <li>???????</li>
         </ul>
         <div>You have <span id="count-cart">X</span> items in your cart</div>
         <div>Total Cart:$<span id="total-cart"></span></div>
-    </div>
+    </div> -->
 
 
 
 
+    <!-- Link  html to jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
 
-
-
+    <!-- Remove this before Final update   <script src='https://smiotti.github.io/DOM-Library/dom.js'></script>  -->
 
     <script src="../shopping-cart/assets/js/index.js"></script>
 </body>
