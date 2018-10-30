@@ -9,54 +9,63 @@ const showAll = function () {
 
 const showAle = function () {
     $(`.typeAle`).show();
-    $(`.typeStout`).hide(500);
-    $(`.typePorter`).hide(500);
-    $(`.typeLager`).hide(500);
-    $(`.typeIpa`).hide(500);
+    $(`.typeStout`).hide(350);
+    $(`.typePorter`).hide(350);
+    $(`.typeLager`).hide(350);
+    $(`.typeIpa`).hide(350);
 };
-
-
-const showIpa = function () {
-    $(`.typeIpa`).show();
-    $(`.typeAle`).hide(500);
-    $(`.typeStout`).hide(500);
-    $(`.typePorter`).hide(500);
-    $(`.typeLager`).hide(500);
-}
 
 
 const showPorter = function () {
     $(`.typePorter`).show();
-    $(`.typeAle`).hide(500);
-    $(`.typeStout`).hide(500);
-    $(`.typeLager`).hide(500);
-    $(`.typeIpa`).hide(500);
+    $(`.typeAle`).hide(350);
+    $(`.typeStout`).hide(350);
+    $(`.typeLager`).hide(350);
+    $(`.typeIpa`).hide(350);
 }
 
 const showLager = function () {
     $(`.typeLager`).show();
-    $(`.typeAle`).hide(500);
-    $(`.typeStout`).hide(500);
-    $(`.typePorter`).hide(500);
-    $(`.typeIpa`).hide(500);
+    $(`.typeAle`).hide(350);
+    $(`.typeStout`).hide(350);
+    $(`.typePorter`).hide(350);
+    $(`.typeIpa`).hide(350);
 }
 
 const showStout = function () {
     $(`.typeStout`).show();
-    $(`.typeAle`).hide(500);
-    $(`.typePorter`).hide(500);
-    $(`.typeLager`).hide(500);
-    $(`.typeIpa`).hide(500);
+    $(`.typeAle`).hide(350);
+    $(`.typePorter`).hide(350);
+    $(`.typeLager`).hide(350);
+    $(`.typeIpa`).hide(350);
 }
 
 
 
-// Play Audio File
-var x = document.getElementById("myAudio"); 
-
-function playAudio() { 
-    x.play(); 
+function addCart(beer) {
+    var beerType = beer.getAttribute("data-name");
+    // $('#show-cart').html(beerType.fontcolor("DarkBlue").bold());
+    // $('#show-cart').append(beerType.fontcolor("DarkBlue").bold());
+    $('.content').append(beerType.fontcolor("DarkBlue").bold());
+  
+    
 }
+
+function hideBeer(beer) {
+    var beerType = "#"+beer.getAttribute("id");
+    $(beerType).hide();
+    // $(`#guinessButton`).hide();
+
+}
+
+
+function clearCart() {
+    $('.content').html("");
+    showAll();
+
+
+}
+
 
 
 /* When the user clicks on the button,
@@ -83,11 +92,16 @@ function filterFunction() {
 
 
 
+// $('.content').html(nameVal.fontcolor("DarkBlue").bold() + ' removed from Directory');
+// $(`#filterAll`).on(`click`, showAll);
+
+
+
+
 // Listening for user to click their beer selection 
 console.log("slecting Ales");
 $(`#filterAll`).on(`click`, showAll);
 $(`#filterAle`).on(`click`, showAle);
-$(`#filterIpa`).on(`click`, showIpa);
 $(`#filterLager`).on(`click`, showLager);
 $(`#filterPorter`).on(`click`, showPorter);
 $(`#filterStout`).on(`click`, showStout);
@@ -98,6 +112,36 @@ $(`#filterStout`).on(`click`, showStout);
 
 
 // $('#updateButton').on('click', updateName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
