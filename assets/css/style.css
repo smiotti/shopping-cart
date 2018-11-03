@@ -1,4 +1,4 @@
-
+/* font and background styling for the Body of web page.  background image is set here. */
 body {
     background-color: #F2E5D5;
 	color: #777777;
@@ -10,7 +10,7 @@ body {
     
 }
 
-
+/* styling text in the top single column grid element  */
 .col-12 {
     text-align: center;
     color: #f1e4c4;
@@ -20,7 +20,7 @@ body {
     
 }
 
-
+/* styling space for shoping cart container. Using bootstrap's jumbotron component */
 .jumbotron {
     padding-top: 10px;
     margin-bottom: 10px;
@@ -30,40 +30,40 @@ body {
     border-width: 4px;
 }
 
-
+ /* Styling heading text of shopping cart */
 .display-10 {
     text-align: center;
     font-size: 18px;
-    color: black;
-    
+    color: black;    
 }
 
 
-/* The search field styling*/
+/* Search field box and Filter button styling*/
 #myInput {
     background-position: 1px 1px;
     background-repeat: no-repeat;
     font-size: 16px;
     padding: 4px 6px 12px 6px; 
     border: none;
-    border-bottom: 1px solid #ddd;
-    
+    border-bottom: 1px solid #ddd;   
 }
+
 
 #buttons {
     border-radius: 50%;
 }
 
 
-
 /* The search field when it gets focus/clicked on */
 #myInput:focus {outline: 3px solid #ddd;}
+
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
 }
+
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -75,6 +75,8 @@ body {
     border: 1px solid #ddd;
     z-index: 1;
 }
+
+
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
@@ -85,6 +87,7 @@ body {
 
 /* Change color of dropdown links on hover */
 .dropdown a:hover {background-color: #ddd;}
+
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display: block;}
@@ -101,7 +104,6 @@ body {
     .body {background-size: 768px;}
     .btn-lg {font-size: 80%;}
 }
-
 
 
 /* Sized for screens up to 450 pxels. */
