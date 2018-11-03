@@ -1,4 +1,118 @@
-// Show funtions used to toggle beer choices bsed on the Filter option selected by the use.
+const cartBeerList = [`test`];
+let display = 'false';
+
+const beerList = [
+    {
+        name: 'Two Hearted Ale',
+        type: 'typeAle',
+        uniq: 'twoHearted'
+    },
+
+    {
+        name: 'Lake Erie Monster',
+        type: 'typeAle',
+        uniq: 'lakeErie'
+    },
+
+    {
+        name: '12 Dogs of Christmas Ale',
+        type: 'typeAle',
+        uniq: 'christmasAle'
+    },
+
+    {
+        name: 'Double Dead Guy Ale',
+        type: 'typeAle',
+        uniq: 'doubleDead'
+    },
+
+    {
+        name: 'Elliot Ness',
+        type: 'typeLager',
+        uniq: 'eliotNess'
+    },
+
+    {
+        name: 'Dortmunder Gold',
+        type: 'typeLager',
+        uniq: 'dortmunder'
+    },
+
+    {
+        name: 'Guinness Draught',
+        type: 'typeStout',
+        uniq: 'guiness'
+    },
+
+    {
+        name: 'Moment of Clarity',
+        type: 'typeStout',
+        uniq: 'momentOfClarity'
+    },
+
+    {
+        name: 'Coconut Porter',
+        type: 'typePorter',
+        uniq: 'cocoPorter'
+    },
+
+];
+
+
+const generateButton = function (obj) {
+    return `<button id="${obj.uniq}" class="btn btn-primary btn-lg btn-block ${obj.type}" data-name="${obj.name}" data-type="${obj.type}">${obj.name}</button>`;
+}
+
+const render = function () {
+    let html = '';
+    for (let i = 0; i < beerList.length; i++) {
+        html += generateButton(beerList[i]);
+    }
+
+    $('#primary-list').append(html);
+}
+
+render();
+
+
+
+
+// const generateCartButton = function(obj) {
+//     return `<button id="${obj.uniq}" class="btn btn-primary btn-lg btn-block ${obj.type}" data-name="${obj.name}" data-type="${obj.type}">${obj.name}</button>`;
+// }
+
+
+// $('#cart-list').on('click', addCart(beerList.uniq));
+// var beerType = "#"+this.getAttribute("id");
+
+
+
+
+// Listening for user to add beer to Cart and calling the addCart funtion to do so
+$('#twoHearted').on('click', addCart);
+$('#lakeErie').on('click', addCart);
+$('#christmasAle').on('click', addCart);
+$('#doubleDead').on('click', addCart);
+$('#eliotNess').on('click', addCart);
+$('#dortmunder').on('click', addCart);
+$('#guiness').on('click', addCart);
+$('#momentOfClarity').on('click', addCart);
+$('#cocoPorter').on('click', addCart);
+
+
+// // Listening for user to remove beer from Cart and calling the removeCart funtion to do so
+// $('#twoHearted').on('click', removeCart);
+// $('#lakeErie').on('click', removeCart);
+// $('#christmasAle').on('click', removeCart);
+// $('#doubleDead').on('click', removeCart);
+// $('#eliotNess').on('click', removeCart);
+// $('#dortmunder').on('click', removeCart);
+// $('#guiness').on('click', removeCart);
+// $('#momentOfClarity').on('click', removeCart);
+// $('#cocoPorter').on('click', removeCart);
+
+
+
 
 const showAll = function () {
     $(`.typeAle`).show();
@@ -46,54 +160,130 @@ const showStout = function () {
 
 
 // Funtion adds item to the shopping cart
-function addCart(beer) {
-    var beerType = beer.getAttribute("data-name");
-    var beerId = beer.getAttribute("id");
+function addCart() {
+    
+    const x = ($(this).attr("data-name"));
+    const beerInCart = $('<button>').addClass('btn-sm btn-block');
+    beerInCart.text($(this).attr("data-name"));
+    beerInCart.attr('id', $(this).attr("id") + "_crt");
+
+
+    //checking if beer in already in the list.
+
+
+    for (let i = 0; i < cartBeerList.length; i++) {
+        if (cartBeerList[i] === x) {
+            console.log('already in the cart!');
+            display = false;
+            break
+        } 
+        
+        if (cartBeerList[i] !== x) {
+            cartBeerList.push(x);
+            display = true;
+            break
+        }
+    }
+
+    if (display === true) {
+        $('#cart-list').append(beerInCart);
+        console.log('beer added to cart!');
+    }
+
+
+
+
+
+
+    // const removeName = function () {
+    //     let onEmployeetList = false;
+    //     // Gathering user input.
+    //     const nameVal = $('#nameInp').val();
+
+    //     // If selected employee name is in the list, delete the employee record.
+    //     for (let i = 0; i < employeeList.length; i++) {
+    //         if (employeeList[i].name === nameVal) {
+    //           employeeList.splice(i, 1);
+    //           onEmployeetList = true;  
+    //         }    
+    //     }   
+
+    //     // Alert user of action status.
+    //     $('#scroll').html(nameVal.fontcolor("DarkBlue").bold() + ' removed from Directory');
+
+    //     // If selected employee name not in the list, alert user.
+    //     if (onEmployeetList == false) {
+    //         $('#scroll').html(nameVal.fontcolor("DarkRed").bold() + ' not in the employee list');
+    //         }
+
+
+
+
+
+
+
+
+
+    // btn.setAttribute('id', 'button' + ctr);
+    // <button id="${obj.uniq}"
+
+
+    // $('#primary-list').on('click', '.col-4', addCart)
+
+
+
+
+
+
+
+
+    // var beerType = beer.getAttribute("data-name");
+    // var beerId = "#"+beer.getAttribute("id");
+
     // $('#show-cart').html(beerType.fontcolor("DarkBlue").bold());
     // $('#show-cart').append(beerType.fontcolor("DarkBlue").bold());
-   
-    const projBtn = $('<button>');
-    projBtn.addClass('btn-sm btn-block'); 
-    // projBtn.attr('data-name', beerType+`_cart`);
-    projBtn.attr('id', beerId +`_cart`);
-    projBtn.attr('data-name', beerId);
-    
-    projBtn.text(beerType);
-    $('#buttons').append(projBtn);
-    
- 
-  
+
+    // use this one
+    // $('.content').append(beerType.fontcolor("DarkBlue").bold()+'<br/>'); 
+
+    // const projBtn = $('<button>');
+    // projBtn.addClass('btn-sm btn-block'); 
+    // // projBtn.attr('data-name', beerType+`_cart`);
+    // projBtn.attr('id', beerId +`_cart`);
+    // projBtn.text(beerType);
+    // $('#buttons').append(projBtn);
+
+
 }
 
 
 
 // Funtion removes item from the shopping cart
 function removeCart(beer) {
-    console.log('removecart has been called');
-    // var beerInCart = beer.getAttribute("id");
-    // var beerId = "#"+beer.getAttribute("id");
+    var beerInCart = beer.getAttribute("id");
+
 
 
     // $('#buttons').remove(beerInCart);
 
     // $('#eliotNess_cart').remove();
     // vs in Console
-
-    // ('beerId').remove();
+    ('#buttons').remove();
 
 
 
 
     // $("button").on("click", function(){
-        // $(this).parent().remove();
+    //     $(this).parent().remove();
     // });
 
 
-    // https://stackoverflow.com/questions/8133768/dynamically-adding-and-removing-buttons-with-jquery
-    
-}
 
-// $(`#eliotNess_cart`).on(`click`, removeCart(this));
+
+
+    // https://stackoverflow.com/questions/8133768/dynamically-adding-and-removing-buttons-with-jquery
+
+}
 
 
 
@@ -122,7 +312,7 @@ function removeCart(beer) {
 
 // Function hides the beer from being displayed once it's been added to the cart.
 function hideBeer(beer) {
-    var beerType = "#"+beer.getAttribute("id");
+    var beerType = "#" + this.getAttribute("id");
     $(beerType).hide();
     // $(`#guinessButton`).hide();
 
@@ -130,12 +320,13 @@ function hideBeer(beer) {
 
 // Funtion empties the shopping cart.
 function clearCart() {
-    $('#buttons').html("");
+    $('.content').html("");
     // $('.content').text("");
     showAll();
 
     // $('content').empty();
     // $('#buttons').remove();
+
 
 }
 
@@ -160,9 +351,8 @@ function filterFunction() {
             a[i].style.display = "none";
         }
     }
-   
-}
 
+}
 
 
 // $('.content').html(nameVal.fontcolor("DarkBlue").bold() + ' removed from Directory');
@@ -179,35 +369,9 @@ $(`#filterLager`).on(`click`, showLager);
 $(`#filterPorter`).on(`click`, showPorter);
 $(`#filterStout`).on(`click`, showStout);
 
+
 // $(`#eliotNess_cart`).on(`click`, removeCart(this));
 
-$("#buttons").click(function() {
-    // var beerId = beer.getAttribute("id");
-    var beerId = this.firstChild.id;
-    var temp = "#"+this.attributes.id.ownerElement.firstChild.attributes["data-name"].value;
-    // alert(this.id);
-    // alert(beerId);
-    $('#'+this.firstChild.id).remove();
-    
-    
-    $(temp).show();
-    // $(`#cocoPorter`).show();
-});
-
-
-
-
-
-// firstChild.id
-// $("#buttons").on("click", function(){
-//     $(this.$(id)).remove();
-//     alert(this.id)
-// });
-
-
- // var beerId = "#"+beer.getAttribute("id");
-
-// $('#buttons').on('click',getRec);
 
 
 
@@ -304,8 +468,8 @@ $("#buttons").click(function() {
 //     displayCart();
 // });
 // displayCart(); 
- 
- 
+
+
 //  // Shopping Cart functions
 
 // var shoppingCart = (function () {
@@ -330,7 +494,7 @@ $("#buttons").click(function() {
 //     }
 
 //     loadCart();
- 
+
 //  // Public methods and properties
 //  var obj = {};
 

@@ -30,20 +30,20 @@ body {
 .jumbotron {
     padding-top: 10px;
     margin-bottom: 10px;
-    height: 400px;
+    height: 450px;
     border-style: outset;
     border-color:#f7de95;
     border-width: 4px;
 }
 
-
-.content{
-    border-style: inset;
+/* This is set up for text elemet being added to the cart not a botton.  can removed or modify for button */
+/* .content{
+    border-style: solid;
     background: lightgrey;
-    
     border: black;
+    border: 1px solid green ;
     
-}
+} */
 
 .display-10 {
     text-align: center;
@@ -54,7 +54,7 @@ body {
 
 
 
-/* Dropdown Button */
+/* Dropdown Button, if not using Bootstrap */
 /* .dropbtn {
     background-color: #4CAF50;
     
@@ -74,7 +74,7 @@ body {
 
 
 
-/* The search field */
+/* The search field styling*/
 #myInput {
     /* border-box: box-sizing; */
     /* background-image: url('https://www.glyphicons.com/img/glyphicons/basic/2x/glyphicons-basic-28-search@2x.png'); */
@@ -89,6 +89,16 @@ body {
     border-bottom: 1px solid #ddd;
     
 }
+
+#buttons {
+    border-radius: 50%;
+}
+/* Button styling */
+/* https://www.w3schools.com/css/css3_buttons.asp */
+
+
+
+
 
 /* The search field when it gets focus/clicked on */
 #myInput:focus {outline: 3px solid #ddd;}
@@ -135,6 +145,8 @@ body {
     border: none;
     cursor: pointer; */
 }
+
+
 
 
 
