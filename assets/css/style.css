@@ -1,6 +1,5 @@
 
 body {
-    /* text-align: center; */
     background-color: #F2E5D5;
 	color: #777777;
     font-family:'Arial', 'Helvetica Neue', Helvetica, sans-serif;
@@ -8,20 +7,15 @@ body {
     margin-left: 5px;
     line-height: 1.5;
     background-image: url(https://c.wallhere.com/photos/4d/09/beer_alcohol-114999.jpg!d); 
-    /* background-size: 105%; */
-  
-
-	/* padding-top: 100px; */
+    
 }
 
 
 .col-12 {
     text-align: center;
     color: #f1e4c4;
-   
     margin-top: 20px;
     margin-bottom: 10px;
-    /* background-image: url(http://s3-eu-west-1.amazonaws.com/f4x4-myndir/uploads/2018/04/Beer-Desktop-Background.jpg); */
     width: 150px;
     
 }
@@ -36,14 +30,6 @@ body {
     border-width: 4px;
 }
 
-/* This is set up for text elemet being added to the cart not a botton.  can removed or modify for button */
-/* .content{
-    border-style: solid;
-    background: lightgrey;
-    border: black;
-    border: 1px solid green ;
-    
-} */
 
 .display-10 {
     text-align: center;
@@ -53,34 +39,8 @@ body {
 }
 
 
-
-/* Dropdown Button, if not using Bootstrap */
-/* .dropbtn {
-    background-color: #4CAF50;
-    
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer; */
-    
-/* } */
-
-/* Dropdown button on hover & focus */
-/* .dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
-} */
-
-
-
-
 /* The search field styling*/
 #myInput {
-    /* border-box: box-sizing; */
-    /* background-image: url('https://www.glyphicons.com/img/glyphicons/basic/2x/glyphicons-basic-28-search@2x.png'); */
-
-    /* height: auto; */
-    /* background-color: #777777 */
     background-position: 1px 1px;
     background-repeat: no-repeat;
     font-size: 16px;
@@ -93,10 +53,6 @@ body {
 #buttons {
     border-radius: 50%;
 }
-/* Button styling */
-/* https://www.w3schools.com/css/css3_buttons.asp */
-
-
 
 
 
@@ -134,22 +90,6 @@ body {
 .show {display: block;}
 
 
-/* This can be removed */
-#clear-cart {
-    /* background-color: #4CAF50;
-    color: white; */
-
-
-    /* padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer; */
-}
-
-
-
-
-
 /* Sized for screens up to 980 pxels. */
 @media screen and (max-width: 980px) {
     .body {background-size: auto;}
@@ -160,9 +100,6 @@ body {
 @media screen and (max-width: 768px) {
     .body {background-size: 768px;}
     .btn-lg {font-size: 80%;}
-    
-
-
 }
 
 
