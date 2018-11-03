@@ -46,6 +46,7 @@ body {
     padding: 4px 6px 12px 6px; 
     border: none;
     border-bottom: 1px solid #ddd;   
+    max-width: 170px;
 }
 
 
@@ -70,10 +71,10 @@ body {
     display: none;
     position: absolute;
     background-color: #f6f6f6;
-    min-width: 110px;
-    overflow: auto;
+    max-width: 170px;
     border: 1px solid #ddd;
     z-index: 1;
+    
 }
 
 
@@ -96,18 +97,28 @@ body {
 /* Sized for screens up to 980 pxels. */
 @media screen and (max-width: 980px) {
     .body {background-size: auto;}
+    .btn-lg {font-size:80%;}
+    .btn-primary {font-size: 80%;}
+    .dropbtn {padding: 9px; font-size: 12px;}
+    
+    #myInput {        
+        font-size: 10px;
+        padding: 2px 1px 2px 1px; 
+        border: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* .dropdown-content a {
+        /* padding: 6px 6px; */
+        text-decoration: none;
+        display: block;
+        font-size: 12px;
+    } */
 
 }
 
 /* Sized for screens up to 768 pxels. */
 @media screen and (max-width: 768px) {
-    .body {background-size: 768px;}
-    .btn-lg {font-size: 80%;}
-}
-
-
-/* Sized for screens up to 450 pxels. */
-@media screen and (max-width: 450px) {
     .btn-lg {font-size: 45%;}   
     .dropbtn {padding: 9px; font-size: 12px;}
     
@@ -130,8 +141,37 @@ body {
         display: block;
         font-size: 8px;
     }
+}
+
+
+/* Sized for screens up to 450 pxels. */
+@media screen and (max-width: 450px) {
+    .btn-lg {font-size: 45%;}   
+    .btn-primary {font-size: 40%;}
+    .dropbtn {padding: 9px; font-size: 10px;}
     
+    #myInput {        
+        font-size: 6px;
+        padding: 2px 1px 2px 1px; 
+        border: none;
+        border-bottom: 1px solid #ddd;
+        max-width: 70px;
+    }
+    
+    .dropdown-content {  
+        min-width: auto;
+        max-width: 70px;
+      
+    }
 
 
+    .dropdown-content a {
+        /* padding: 6px 6px; */
+        text-decoration: none;
+        display: block;
+        font-size: 8px;
+        max-width: 70px;
+    }
+    
 }
 
