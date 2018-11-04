@@ -114,11 +114,11 @@ $("#buttons").click(function () {
     // gathering button ID and data-name attrute to determine correct items 
     // to remove from cart and add back to the beer selection list
     var beerId = this.firstChild.id;
-    var temp = "#" + this.attributes.id.ownerElement.firstChild.attributes["data-name"].value;
+    var beerButton = "#" + this.attributes.id.ownerElement.firstChild.attributes["data-name"].value;
     // removes item from cart based on button id
     $('#' + beerId).remove();
     // adds button back to selection list based on button data-name attribute.
-    $(temp).show();
+    $(beerButton).show();
 
 });
 
